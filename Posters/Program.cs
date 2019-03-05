@@ -52,7 +52,7 @@ namespace Posters
             int poster = posterCount;
             int minTemp = cxy[0, 1];
 
-            for (int x = 0; x < buildingsCount - 1; x++)
+            for ( int x = 0; x < buildingsCount - 1; x++)
             {
                 if (cxy[x + 1, 1] < minTemp)
                 {
@@ -60,7 +60,18 @@ namespace Posters
                     poster++;
                 }
                 if (cxy[x + 1, 1] > cxy[x, 1]) poster++;
-                else if (cxy[x + 1, 1] < cxy[x, 1] && (cxy[x + 1, 1] > minTemp)) poster++;
+                else if (cxy[x + 1, 1] < cxy[x, 1] && (cxy[x + 1, 1] > minTemp))
+                {
+                    poster++;
+                    for (int i = 0; i < buildingsCount - 1; i++)
+                    {
+                        if (cxy[x + 1, 1] == cxy[i, 1] & cxy[x + 1, 1] > minTemp)
+                        {
+                            poster--;
+                            i = buildingsCount;
+                        }
+                    }
+                }
             }
 
             return poster;
