@@ -27,8 +27,6 @@ namespace Posters
                 }
                 catch (Exception e)
                 {
-                    Console.WriteLine("Wrong input - type correct building description(Two digits separated by space)");
-                    readBuidlingDesc(i);
                 }
             }
 
@@ -76,5 +74,4 @@ namespace Posters
             return poster;
         }
     }
-
 }
