@@ -11,7 +11,6 @@ namespace Posters
 
         static void Main(string[] args)
         {
-            Console.WriteLine("POSTERS");
             buildingsCount = Convert.ToInt32(Console.ReadLine());
             if (buildingsCount > 0)
             {
@@ -63,7 +62,7 @@ namespace Posters
                 else if (cxy[x + 1, 1] < cxy[x, 1] && (cxy[x + 1, 1] > minTemp))
                 {
                     poster++;
-                    for (int i = 0; i < buildingsCount - 1; i++)
+                    for (int i = 0; i < x; i++)
                     {
                         if (cxy[x + 1, 1] == cxy[i, 1] & cxy[x + 1, 1] > minTemp)
                         {
